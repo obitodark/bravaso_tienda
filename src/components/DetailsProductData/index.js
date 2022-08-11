@@ -24,7 +24,7 @@ const DetailsProductData = () => {
     console.log("gagaagaga", Productos);
   };
   const handleOncClickBack = () => {
-    history("/home");
+    history("/shoppingcart");
   };
 
   return (
@@ -54,7 +54,11 @@ const DetailsProductData = () => {
 
         <h6 className="text-secondary">Cantidad :</h6>
 
-        <Counter textNumber={textNumber} increaseNumber={increaseNumber} subtractNumber={increaseNumber} />
+        <Counter
+          textNumber={textNumber}
+          increaseNumber={increaseNumber}
+          subtractNumber={increaseNumber}
+        />
 
         <div></div>
         <div className="mt-3">

@@ -12,7 +12,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MyLayout />}>
-          <Route path="/home" element={<ViewListProduct />} />
+          <Route path="/" element={<ViewListProduct />} />
           <Route path="/Details" element={<ViewDetailsProduct />} />
           <Route path="/shoppingcart" element={<ViewShoppingCart />} />
         </Route>
