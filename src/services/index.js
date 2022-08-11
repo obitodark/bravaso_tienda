@@ -5,9 +5,9 @@ const api_pro = "https://dabsejson.000webhostapp.com/datajson.json";
 
 const listProducts = async () => {
   try {
-    const response = await fetch(api_Productos);
+    const response = await fetch(api_pro);
     const data = await response.json();
-    return data;
+    return data.Article;
   } catch (error) {
     console.log(error);
   }
@@ -15,9 +15,9 @@ const listProducts = async () => {
 
 const ListCategories = async () => {
   try {
-    const response = await fetch(api_Categories);
+    const response = await fetch(api_pro);
     const data = await response.json();
-    return data;
+    return data.categories;
   } catch (error) {
     console.log(error);
   }
@@ -26,9 +26,9 @@ const ListCategories = async () => {
 const ListSubcategories = async () => {
   try {
     const array = [];
-    const response = await fetch(api_Subcategories);
+    const response = await fetch(api_pro);
     const data = await response.json();
-    data.map((ga) => {
+    data.subcategories.map((ga) => {
       return array.push(ga.sub);
     });
     return array;
@@ -39,10 +39,10 @@ const ListSubcategories = async () => {
 
 const getFiltroProduct = async (subcategories, idcategoria) => {
   try {
-    const response = await fetch(api_Productos);
+    const response = await fetch(api_pro);
     const data = await response.json();
 
-    const array = data.filter(
+    const array = data.Article.filter(
       (data) =>
         data.nameSubSubcategories === subcategories &&
         Number(data.categoryId) === Number(idcategoria)
@@ -72,9 +72,9 @@ function onlyUnique(value, index, self) {
 
 const getBrand = async (name, idcategoria) => {
   try {
-    const respose = await fetch(api_Productos);
+    const respose = await fetch(api_pro);
     const data = await respose.json();
-    const arrays = data.filter(
+    const arrays = data.Article.filter(
       (data) =>
         data.nameSubSubcategories === name &&
         Number(data.categoryId) === Number(idcategoria)
@@ -91,9 +91,9 @@ const getBrand = async (name, idcategoria) => {
 
 const getProductForBrand = async (brand, idcategoria, namesubcategoria) => {
   try {
-    const response = await fetch(api_Productos);
+    const response = await fetch(api_pro);
     const data = await response.json();
-    const arrays = data.filter(
+    const arrays = data.Article.filter(
       (array) =>
         array.brand === brand &&
         Number(array.categoryId) === Number(idcategoria)
@@ -114,10 +114,10 @@ const getProductForBrand = async (brand, idcategoria, namesubcategoria) => {
 const getOrderPrice = async (value, nombresubcategoria, idcategoria) => {
   try {
     let order = null;
-    const response = await fetch(api_Productos);
+    const response = await fetch(api_pro);
     const data = await response.json();
 
-    const array = data.filter(
+    const array = data.Article.filter(
       (data) =>
         data.nameSubSubcategories === nombresubcategoria &&
         Number(data.subcategoriesId) === Number(idcategoria)
@@ -170,9 +170,9 @@ function createDescont(price, discount) {
 
 async function getSearchProduct(name) {
   try {
-    const reponse = await fetch(api_Productos);
+    const reponse = await fetch(api_pro);
     const data = await reponse.json();
-    const search = data.filter(
+    const search = data.Article.filter(
       (filtro) =>
         filtro.name.toLowerCase().includes(name.toLowerCase()) ||
         filtro.brand.toLowerCase().includes(name.toLowerCase())
