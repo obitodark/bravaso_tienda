@@ -3,20 +3,11 @@ import { useContext, useState } from "react";
 import { DataContext } from "../../Context/DataProvider";
 
 const TabDetailsProduct = () => {
-  const { arrayproducts, dataProduct } = useContext(DataContext);
-  const [description, setDescription] = useState([]);
+  const { dataProduct, arrayproducts } = useContext(DataContext);
+  const [Productos, setProductos] = useState(
+    arrayproducts.find((arrayproduct) => arrayproduct.id === dataProduct.idPro)
+  );
 
-  // const description = [];
-  // const getDescription = () => {
-  //   const desc = arrayproducts.find(
-  //     (arrayproduct) => arrayproduct.id === dataProduct.idPro
-  //   );
-
-  //   // setDescription(desc);
-  //   console.log("descripyion", description);
-  // };
-
-  // getDescription();
   return (
     <div>
       <nav>
@@ -66,7 +57,7 @@ const TabDetailsProduct = () => {
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          {/* {description.description} */}
+          {Productos.description}
         </div>
         <div
           className="tab-pane fade pt-5"

@@ -1,6 +1,7 @@
 import { ShoppingCartContext } from "../../Context";
 import { useContext } from "react";
 import CartItens from "../../components/CartItens";
+import CartPriceTotal from "../../components/CartPriceTotal";
 import { DataContext } from "../../Context/DataProvider";
 const Shoppingcart = () => {
   const { arrayShoppingCarts, setArrayShoppingCarts } =
@@ -9,7 +10,7 @@ const Shoppingcart = () => {
 
   return (
     <div className="container mt-5 py-5">
-      <h2 className="fw-normal">Carrito de Compras</h2>
+      <h2 className="fw-normal mt-5">Carrito de Compras</h2>
       <h6 className="fw-normal text-secondary">Inicio/Carrito de Compras</h6>
       <div className="addCars">
         <div className="addCar_product p-3  ">
@@ -25,7 +26,9 @@ const Shoppingcart = () => {
         <div
           className="addCar_total card border-0  my-4"
           //   style="width: 18rem;"
-        ></div>
+        >
+          <CartPriceTotal />
+        </div>
       </div>
     </div>
   );

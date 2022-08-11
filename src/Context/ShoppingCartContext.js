@@ -8,6 +8,7 @@ export const ShoppingCartProvider = ({ children }) => {
     // JSON.parse(localStorage.getItem("shoppingcart")) && return ,
   ]);
   const [quantityProduct, setQuantityProduct] = useState(1);
+  const [quantityProductCart, setQuantityProductCart] = useState(0);
   const textNumber = useRef();
 
   const textNumbercart = useRef();
@@ -22,29 +23,30 @@ export const ShoppingCartProvider = ({ children }) => {
     );
   };
 
-
   function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
   }
+
   const saveInCart = (CartShopping, user_id) => {
     const objeto = {
       CartShopping,
       user_id,
       quantity: Number(textNumber.current.innerText),
     };
+
     const items = getItemsCart();
     if (items === -1) {
       textNumber.current.innerText = Number(textNumber.current.innerText);
       setQuantityProduct(textNumber.current.innerText);
       arrayShoppingCarts[arrayShoppingCarts.length] = objeto;
       setArrayShoppingCarts([...arrayShoppingCarts]);
-      console.log("cantidad", textNumber.current.innerText);
+      // console.log("cantidad", textNumber.current.innerText);
     } else {
       textNumber.current.innerText = Number(textNumber.current.innerText);
       const total =
         Number(arrayShoppingCarts[items].quantity) +
         Number(textNumber.current.innerText);
-      console.log("cantidad", textNumber.current.innerText);
+      // console.log("cantidad", textNumber.current.innerText);
       arrayShoppingCarts[items].quantity = total;
       // arrayShoppingCarts.splice(items, 1);
       setArrayShoppingCarts([
@@ -84,6 +86,8 @@ export const ShoppingCartProvider = ({ children }) => {
         subtractNumber,
         increaseNumber,
         quantityProduct,
+        quantityProductCart,
+        setQuantityProductCart,
       }}
     >
       {children}

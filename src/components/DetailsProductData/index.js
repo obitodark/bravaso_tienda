@@ -23,7 +23,7 @@ const DetailsProductData = () => {
     saveInCart(Productos);
     console.log("gagaagaga", Productos);
   };
-  const handleOncClickBack = () => {
+  const handleOncClickCartBuy = () => {
     history("/shoppingcart");
   };
 
@@ -89,7 +89,7 @@ const DetailsProductData = () => {
             className="btn btn_buy_now col-5"
             type="button"
             value="Buy now"
-            onClick={handleOncClickBack}
+            onClick={handleOncClickCartBuy}
           />
         </div>
       </div>

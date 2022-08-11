@@ -93,19 +93,16 @@ const getProductForBrand = async (brand, idcategoria, namesubcategoria) => {
   try {
     const response = await fetch(api_pro);
     const data = await response.json();
+
     const arrays = data.Article.filter(
       (array) =>
         array.brand === brand &&
         Number(array.categoryId) === Number(idcategoria)
     );
-
-    return brand === "Marca-All"
-      ? data.filter(
-          (data) =>
-            data.nameSubSubcategories === namesubcategoria &&
-            Number(data.categoryId) === Number(idcategoria)
-        )
-      : arrays;
+    const all = data.Article.filter(
+      (array) => Number(array.categoryId) === Number(idcategoria)
+    );
+    return brand === "Marca-All" ? all : arrays;
   } catch (error) {
     return error;
   }

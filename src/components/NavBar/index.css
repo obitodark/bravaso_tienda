@@ -3,17 +3,27 @@
   background-color: #6bcfc3;
   border: 0;
   border-radius: 0px 5px 5px 0px;
-  height: 42px;
+  height: 45px;
 }
 .input_search {
   border: #6bcfc3 3px solid;
-
-  width: 400px !important;
+  border-radius: 5px 0px 0px 5px;
 }
-.input_search :focus {
-  color: white;
+.input_search:focus {
 }
 .btn_search:hover {
   background: #b3ebcf;
   color: white;
+}
+.menubar {
+  height: 80px;
+}
+.btn_icon {
+  border: none;
+  background-color: transparent;
+  padding: 7px;
+  margin-left: 10px;
+}
+.img_logo {
+  cursor: pointer;
 }
