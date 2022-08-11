@@ -17,7 +17,7 @@ const NavBar = () => {
     setArrayFilterProducts(response);
   };
   return (
-    <nav className="menubar navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top shadow">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top shadow">
       <div className="container">
         <img src={logo} width="45px" className=" m-0 p-0 " alt="logo" />
         <span className="text-uppercase fw-lighter ms-2">Bravaso</span>
