@@ -1,0 +1,355 @@
+:root {
+  --Color_Priamry: #6bcfc3;
+  --Color_white: white;
+}
+#image_product figure {
+  overflow: hidden;
+}
+.color_primary {
+  background: #6bcfc3;
+}
+
+.color_primary_text {
+  color: #6bcfc3;
+}
+.color_primary:hover {
+  background: #ace7e0;
+  border: none;
+}
+
+#container_list_product {
+  /* border: 1px coral solid; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* contenedor de filtros*/
+#filter_top_product {
+  /* border: 1px solid chartreuse; */
+  display: flex;
+  justify-content: space-around;
+}
+
+/* select ordenar_por */
+#input_select_price {
+  width: 200px;
+}
+
+#div_filtros {
+  display: flex;
+}
+#div_search {
+  width: 400px;
+}
+#input_search {
+  width: 100%;
+}
+/*input number*/
+.container_input_number {
+  display: flex;
+  border: 1px rgb(194, 193, 193) solid;
+  width: 120px;
+  padding: 5px;
+  border-radius: 6px;
+}
+#input_mim,
+#input_max {
+  background: rgb(219, 207, 207);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  /* border: 1px black solid; */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by any browser but < IE9 */
+}
+
+#input_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  /* border: 1px black solid; */
+  border-radius: 8px;
+
+  font-size: 20px;
+}
+
+/*list*/
+.bg-categoria {
+  /* background: rgb(245, 244, 244) ; */
+}
+.list {
+  /* background: rgb(245, 244, 244) ; */
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.list:hover {
+  color: #55b1a6;
+}
+/* btn_filtro*/
+
+#btn_filter_option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 35px;
+  margin: 0px 10px;
+  height: 35px;
+  border: none;
+  background: var(--Color_Priamry);
+  border-radius: 8px;
+  display: none;
+}
+/* ******************* */
+/* CARDBOX_PRODUCTO */
+
+.box_Product {
+  background: rgb(238, 234, 234);
+  width: 14rem;
+  height: 27rem;
+}
+.btn_add_car {
+  border: 1px solid rgb(19, 19, 19);
+  border-radius: 20px;
+  height: 40px;
+}
+.btn_buy_now {
+  background: #49c7b8;
+  border-radius: 20px;
+  height: 40px;
+  color: var(--Color_white);
+}
+
+.btn_add_car:hover {
+  border: 1px solid #6bcfc3;
+  height: 40px;
+  background: #6bcfc3;
+  color: white;
+  transition: all 0.3s ease-in;
+}
+.box_Product:hover .img_box_product {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in;
+}
+.box_Product:hover {
+  box-shadow: 5px 5px 8px rgb(212, 204, 204), -5px -5px 8px rgb(212, 204, 204);
+  border: 2px rgb(202, 198, 198) solid !important;
+  transition: all 0.2s ease-in;
+}
+/* **************************************** */
+
+/*  tabs detali de  producto*/
+
+#modul_details {
+  height: 500px;
+  background: rgb(255, 255, 255);
+  padding: 50px;
+}
+/*dic de list porduct**/
+#container_modul_list_product {
+  /* border: 1px crimson solid !important; */
+  /* background: #6bcfc3; */
+  display: flex;
+}
+#option_filter_div {
+  position: relative;
+  /* border: 1px coral solid; */
+  z-index: 2;
+  width: 20%;
+  transition: all 0.3s ease-in;
+}
+#div_list_product {
+  width: 80%;
+  /* border: 1px cornflowerblue solid; */
+  transition: width 0.3s ease-in;
+}
+/* mostrar opciones def iltro */
+
+.show_div_option {
+  z-index: 4;
+  transform: translateX(250px);
+
+  height: 100%;
+  transition: transform 0.3s ease-in;
+}
+/* ******************************** */
+
+.image_product {
+  border-radius: 5px;
+  transform: scale(1);
+}
+.img_box_product {
+  transform: scale(1);
+  transition: all 0.2s ease-in;
+}
+/* .container_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 1;
+  pointer-events: none;
+  z-index: 3;
+} */
+/* ***********************detalle de producto ******************************** */
+
+#container_detalle_precio {
+  height: 100%;
+  padding: 10px;
+  /* background: #ace7e0; */
+}
+#container_images_datos {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  height: 550px;
+  background: rgb(238, 234, 234);
+}
+
+#container_details_product {
+  /* background: rgb(235, 231, 231); */
+}
+.container_images {
+  width: 35%;
+  height: 450px;
+  /* border: 1px coral solid; */
+}
+.container_datos {
+  width: 45%;
+  height: 450px;
+  /* border: 1px cornflowerblue solid; */
+}
+/* ************************ */
+/*imagen carousel*/
+#da {
+  /* background: chartreuse; */
+  display: flex;
+
+  position: absolute;
+
+  bottom: -90px;
+}
+#btn_image_carousel {
+  height: 50px !important;
+  width: 50px !important;
+  opacity: 1;
+  border: 1px black solid;
+}
+.image_carousel_small {
+  width: 50px;
+  height: 50px !important;
+  opacity: 1 !important;
+}
+#image_carousel_small {
+  /* border: 1px coral solid; */
+  height: 50px;
+}
+
+/*buy car*/
+.addCars {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+.addCar_product {
+  /* border: 1px chartreuse solid; */
+  width: 70%;
+
+  justify-content: space-between;
+}
+.addCar_total {
+  width: 25%;
+  margin-left: 20px;
+  background-color: #eeeeee;
+}
+.carBuyData {
+  display: flex;
+  justify-content: center;
+  background-color: #eeeeee;
+}
+@media only screen and (max-width: 1000px) {
+  .container_images {
+    width: 50%;
+  }
+
+  .container_datos {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #option_filter_div {
+    /* background: black; */
+
+    background: white;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    left: -250px;
+    top: -10px;
+    padding-top: 50px;
+  }
+
+  #filter_top_product {
+    flex-direction: column;
+  }
+
+  #btn_filter_option {
+    display: block;
+  }
+  #div_list_product {
+    width: 100%;
+  }
+}
+#nav_header {
+  z-index: 2;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    /* background-color: lightblue; */
+  }
+  .box_Product {
+    width: 300px;
+    height: 525px;
+  }
+  #option_filter_div {
+    /* display: none; */
+  }
+  #container_images_datos {
+    flex-direction: column;
+  }
+  #container_images_datos {
+    align-items: center;
+    height: 950px;
+  }
+  .container_images {
+    width: 80%;
+  }
+
+  .container_datos {
+    margin-top: 90px;
+    width: 80%;
+  }
+  #da {
+    bottom: -80px;
+  }
+
+  #container_list_product {
+    justify-content: center;
+  }
+}

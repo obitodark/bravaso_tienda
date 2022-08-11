@@ -1,0 +1,22 @@
+.btn_search {
+  color: white;
+  background-color: #6bcfc3;
+  border: 0;
+  border-radius: 0px 5px 5px 0px;
+  height: 42px;
+}
+.input_search {
+  border: #6bcfc3 3px solid;
+
+  width: 400px !important;
+}
+.input_search :focus {
+  color: white;
+}
+.btn_search:hover {
+  background: #b3ebcf;
+  color: white;
+}
+.menubar {
+  height: 80px;
+}
