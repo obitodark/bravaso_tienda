@@ -1,14 +1,31 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import "./index.css";
+import { DataContext } from "../../Context/DataProvider";
 const FormFilter = ({ arrayBrand, orderProducts, getProductForBrand }) => {
+  const { boxListCategories } = useContext(DataContext);
   function handleSelectChangeBrand(e) {
     getProductForBrand(e.target.value);
     console.log("filtro de marca", e.target.value);
   }
 
+  let estado = false;
+  function handleToggleViewCategories() {
+    if (!estado) {
+      boxListCategories.current.className =
+        "show_div_option div_list_categories";
+      boxListCategories.current.className =
+        "show_div_option div_list_categories";
+      estado = true;
+    } else {
+      boxListCategories.current.className = "div_list_categories";
+      boxListCategories.current.className = "div_list_categories";
+      estado = false;
+    }
+
+    console.log(boxListCategories.current.className);
+  }
   function handleSelectChange(e) {
     orderProducts(e.target.value);
-    console.log(e.target.value);
   }
   return (
     <div id="div_filtros" className="d-flex my-4 justify-content-end">
@@ -38,8 +55,12 @@ const FormFilter = ({ arrayBrand, orderProducts, getProductForBrand }) => {
         <option value="mayor">Mayor a menor</option>
       </select>
 
-      <button id="btn_filter_option" className="btn btn-primary">
-        Filtros
+      <button
+        id="btn_filter_option"
+        className="btn btn-primary"
+        onClick={handleToggleViewCategories}
+      >
+        <i class="bi bi-filter"></i>
       </button>
     </div>
   );

@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 import StoreApi from "../services";
 export const DataContext = createContext();
 
@@ -16,6 +16,8 @@ const DataProvider = ({ children }) => {
   const [arraySubcategories, setArraySubcategories] = useState([]);
   const [arrayCategories, setArrayCategories] = useState([]);
   const [descount, setDescunt] = useState(null);
+
+  const boxListCategories = useRef();
   const getListProductss = async () => {
     const response = await StoreApi.listProducts();
     setArrayProducts(response);
@@ -62,6 +64,7 @@ const DataProvider = ({ children }) => {
         createDescont,
         arrayCategories,
         descount,
+        boxListCategories,
       }}
     >
       {children}

@@ -1,5 +1,3 @@
-import "./index.css";
-
 const DetailsImageSmall = ({ index, producto }) => {
   return (
     <button

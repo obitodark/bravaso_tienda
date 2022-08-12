@@ -4,7 +4,6 @@ import DetailsImageSmall from "../DetailsImageSmall";
 
 import { useContext, useState, useEffect } from "react";
 import StoreApi from "../../services";
-import "./index.css";
 
 const DetailsProductImages = () => {
   const [Productos, setProductos] = useState([]);

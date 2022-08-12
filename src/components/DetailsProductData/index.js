@@ -29,51 +29,57 @@ const DetailsProductData = () => {
 
   return (
     <div>
-      <div className="d-flex my-1">
-        <h5 className="text-secondary mx-1 text-uppercase">
-          {Productos.brand}
-        </h5>
-      </div>
-
-      <div className="py-2">
-        <h2 className="text-capitalize">{String(Productos.name)}</h2>
-        {/* ${createStars(detailProduct.stars)} */}
-      </div>
-
-      <h6
-        className={`badge  bg-danger
-        ${Productos.discount === "" ? "p-0" : "py-3 px-2 "}`}
-      >
-        {Productos.discount === 0 ? "" : Productos.discount + "% DCTO"}
-      </h6>
-
-      <div className="row d-flex">
-        <h5>
-          Stock :<span className="text-secondary mx-1">{Productos.stock}</span>
-        </h5>
-
-        <h6 className="text-secondary">Cantidad :</h6>
-
-        <Counter
-          textNumber={textNumber}
-          increaseNumber={increaseNumber}
-          subtractNumber={increaseNumber}
-        />
-
-        <div></div>
-        <div className="mt-3">
-          <h5>Tallas</h5>
-          <div>//</div>
+      <div className="datos_details">
+        <div className=" d-flex my-1">
+          <h5 className="text-secondary mx-1 text-uppercase">
+            {Productos.brand}
+          </h5>
         </div>
 
-        <div>
-          <h4 className="text-danger">
-            {"S/" + createDescont(Productos.price_off, Productos.discount)}
-            (Oferta)
-            <del className="text-secondary mx-3">
-              {Productos.discount === 0 ? "" : "S/" + Productos.price_off}
-            </del>
-          </h4>
+        <div className="py-2">
+          <h2 className="text-capitalize">{String(Productos.name)}</h2>
+          {/* ${createStars(detailProduct.stars)} */}
+        </div>
+
+        <h6
+          className={`badge  bg-danger
+        ${Productos.discount === "" ? "p-0" : "py-3 px-2 "}`}
+        >
+          {Productos.discount === 0 ? "" : Productos.discount + "% DCTO"}
+        </h6>
+
+        <div className="row d-flex">
+          <h5>
+            Stock :
+            <span className="text-secondary mx-1">{Productos.stock}</span>
+          </h5>
+
+          <div className="detailsProductAmount">
+            <h6 className="text-secondary">Cantidad :</h6>
+
+            <div className="mx-3">
+              <Counter
+                textNumber={textNumber}
+                increaseNumber={increaseNumber}
+                subtractNumber={increaseNumber}
+              />
+            </div>
+          </div>
+
+          {/* <div className="mt-3">
+            <h5>Tallas</h5>
+            <div>//</div>
+          </div> */}
+
+          <div className="mt-3">
+            <h4 className="text-danger">
+              {"S/" + createDescont(Productos.price_off, Productos.discount)}
+              (Oferta)
+              <del className="text-secondary mx-3">
+                {Productos.discount === 0 ? "" : "S/" + Productos.price_off}
+              </del>
+            </h4>
+          </div>
         </div>
 
         <div className="row d-flex justify-content-around mt-4">

@@ -6,35 +6,24 @@ import {
   ViewFormFilter,
   ViewPagination,
 } from "../../components";
-
 import "./index.css";
 import { DataContext } from "../../Context/DataProvider";
-
+// import "../../Styles/index.css";
 const ListProducts = () => {
   // const [arrayListProductd,setArrayListProductd]= useState([]);
 
-  const [products, setProducts] = useState([]);
   const [filtropro, setFiltropro] = useState([]);
-  const [filterProduct, setFilterProduct] = useState([]);
 
   const [arrayBrand, setArrrayBrand] = useState([]);
 
   const {
     arrayproducts,
     dataProduct,
-    setArrayProducts,
+
     arrayFilterProducts,
     setArrayFilterProducts,
+    boxListCategories,
   } = useContext(DataContext);
-
-  const getListProducts = async () => {
-    const response = await StoreApi.listProducts();
-    //  setArrayProducts(response)
-    setProducts(response);
-    setFilterProduct(response);
-    setFiltropro(response);
-    // console.log("contenxt", arrayproducts);
-  };
 
   const getBrand = async (name, id) => {
     if (name.length > 0) {
@@ -75,10 +64,6 @@ const ListProducts = () => {
     }
   };
 
-  useEffect(() => {
-    getListProducts();
-  }, []);
-
   return (
     <div className="container mt-5 pt-5">
       <div className=" mt-5 container border  border-top-0 border-start-0 border-end-0">
@@ -97,13 +82,13 @@ const ListProducts = () => {
           orderProducts={orderProducts}
         />
       </div>
-      <div className="container d-flex my-2">
-        <div className="div_list_categories">
+      <div className="container-fluid d-flex my-2 ">
+        <div className="div_list_categories  " ref={boxListCategories}>
           <h4 className="fw-normal my-3">Categorias</h4>
           <ViewListCategories refrescar={refrescar} getBrand={getBrand} />
         </div>
 
-        <div className="div_list_product ">
+        <div className="div_list_product">
           <ViewCardProducts
             filterProduct={arrayFilterProducts}
             arraybrand={arrayBrand}

@@ -100,7 +100,9 @@ const getProductForBrand = async (brand, idcategoria, namesubcategoria) => {
         Number(array.categoryId) === Number(idcategoria)
     );
     const all = data.Article.filter(
-      (array) => Number(array.categoryId) === Number(idcategoria)
+      (array) =>
+        Number(array.categoryId) === Number(idcategoria) &&
+        array.nameSubSubcategories === namesubcategoria
     );
     return brand === "Marca-All" ? all : arrays;
   } catch (error) {

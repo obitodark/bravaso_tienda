@@ -3,6 +3,8 @@ import { useContext } from "react";
 import CartItens from "../../components/CartItens";
 import CartPriceTotal from "../../components/CartPriceTotal";
 import { DataContext } from "../../Context/DataProvider";
+
+import "./index.css";
 const Shoppingcart = () => {
   const { arrayShoppingCarts, setArrayShoppingCarts } =
     useContext(ShoppingCartContext);

@@ -1,8 +1,6 @@
 import ProductNotFound from "../ProductNotFound";
 import Products from "../Products";
 
-import "./index.css";
-
 const CardProducts = ({ filterProduct }) => {
   return (
     <div>
