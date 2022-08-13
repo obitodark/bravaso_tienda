@@ -1,11 +1,19 @@
 import { useContext, useState } from "react";
+import { AuthContext } from "../../Context/AuthContext";
 import { DataContext } from "../../Context/DataProvider";
 import logo from "../../images/logo.png";
 import StoreApi from "../../services";
 import { useNavigate } from "react-router-dom";
 import { ShoppingCartContext } from "../../Context";
+
 import "./index.css";
+
+
+
 const NavBar = () => {
+  
+  const { user,logout,isAuth } = useContext(AuthContext);
+
   const [inputText, setInputText] = useState("");
   const { quantityProductCart } = useContext(ShoppingCartContext);
   const { setArrayFilterProducts } = useContext(DataContext);
@@ -25,6 +33,17 @@ const NavBar = () => {
     const response = await StoreApi.getSearchProduct(inputText);
     setArrayFilterProducts(response);
   };
+
+  const LoginOnclickBtn = () => {
+    if (isAuth()){
+       (logout());
+    }
+    history("/login")
+    
+  };
+  
+  
+
   return (
     <nav className=" navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top shadow">
       <div className="container  ">
@@ -36,12 +55,12 @@ const NavBar = () => {
             alt="logo"
             onClick={handleNavigateHome}
           />
-          <span className="text-uppercase fw-lighter ms-2">Bravaso</span>
+          <span className="text-uppercase fw-lighter ms-2">{user.name} bravaso </span>
         </div>
 
         <div className="order-lg-2 nav-btns">
           <button type="button" className="btn_icon  position-relative">
-            <i className="bi bi-person"></i>
+            <i className="bi bi-person" onClick={LoginOnclickBtn }></i>
           </button>
           <button
             type="button "
@@ -70,7 +89,7 @@ const NavBar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
